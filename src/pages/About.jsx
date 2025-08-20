@@ -38,6 +38,7 @@ const About = () => {
         className="bg-primary text-white py-20 md:py-28"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* --- THIS LINE IS CORRECTED --- */}
           <motion.h1 variants={fadeIn} className="font-unbounded text-4xl md:text-6xl font-extrabold">About AccountsCounts</motion.h1>
           <motion.p variants={fadeIn} className="mt-4 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
             Connecting Australia's businesses with elite, vetted accounting talent.
@@ -45,7 +46,7 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* 2. Our Story Section (Adapted for the new model) */}
+      {/* 2. Our Story Section */}
       <section className="py-20 md:py-28">
         <motion.div
           initial="hidden"
@@ -69,7 +70,7 @@ const About = () => {
         </motion.div>
       </section>
 
-      {/* 3. Mission & Goal Section (From PDF) */}
+      {/* 3. Mission & Goal Section */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -89,7 +90,6 @@ const About = () => {
                 <p className="text-slate-600">To meet our professional responsibilities in an ethical and fair manner, providing a platform of the highest quality to our clients that consistently exceeds their expectations.</p>
               </motion.div>
             </div>
-            {/* The key sentence from your PDF */}
             <motion.div variants={fadeIn} className="mt-12 bg-slate-100 border-l-4 border-accent p-6 rounded-r-lg max-w-3xl mx-auto text-left">
               <p className="text-slate-700 italic">"That's why we are approaching CPAs, CAs & other Accounting Professionals rather than directly striking on clients."</p>
             </motion.div>
@@ -97,7 +97,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* 4. Our Core Values Section (From "Why Us" in PDF) */}
+      {/* 4. Our Core Values Section */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -135,35 +135,6 @@ const About = () => {
               Our platform connects you with professionals who can provide tailored solutions that fit your specific business needs.
             </ValueCard>
           </motion.div>
-        </div>
-      </section>
-
-      {/* 5. Final CTA Section */}
-      <section className="bg-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.h2
-                initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={fadeIn}
-                className="font-unbounded text-3xl md:text-4xl font-bold text-primary"
-            >
-                Join Australia's Premier Accounting Marketplace
-            </motion.h2>
-            <motion.p
-                initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={fadeIn}
-                className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto"
-            >
-                Whether you're looking to hire expert talent or find your next project, AccountsCounts is your trusted partner for success.
-            </motion.p>
-            <motion.div
-              initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={staggerContainer}
-              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
-            >
-                <motion.a href="#" variants={fadeIn} className="bg-accent text-primary font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-105 inline-block">
-                    Find Talent
-                </motion.a>
-                <motion.a href="#" variants={fadeIn} className="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-slate-800 transition duration-300 transform hover:scale-105 inline-block">
-                    Apply as a Freelancer
-                </motion.a>
-            </motion.div>
         </div>
       </section>
     </div>

@@ -100,40 +100,36 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Right Column: Contact Details & CTAs */}
+          {/* Right Column: Contact Details & "Our Commitment" Section */}
           <motion.div variants={fadeIn} className="space-y-8">
             <div className="bg-white p-8 rounded-xl shadow-lg">
               <h3 className="font-unbounded text-xl font-bold text-primary mb-4">Contact Details</h3>
               <div className="flex items-center text-slate-700 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                {/* CORRECTED EMAIL */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 <a href="mailto:info@accountscounts.com" className="hover:text-accent">info@accountscounts.com</a>
               </div>
                <div className="flex items-start text-slate-700">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 <p>Global Operations HQ: <br/> Shimla, (H.P.), India</p>
               </div>
             </div>
-
+            
             <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="font-unbounded text-xl font-bold text-primary mb-4">Looking for something specific?</h3>
-              <p className="text-slate-600 mb-6">Use our dedicated portals to get started right away.</p>
-              <div className="space-y-4">
-                <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  href="#"
-                  className="w-full block bg-slate-100 text-primary font-bold py-4 px-6 rounded-lg text-center hover:bg-accent/20 transition duration-300"
-                >
-                  Hire a Professional
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  href="#"
-                  className="w-full block bg-slate-100 text-primary font-bold py-4 px-6 rounded-lg text-center hover:bg-accent/20 transition duration-300"
-                >
-                  Apply as a Freelancer
-                </motion.a>
-              </div>
+              <h3 className="font-unbounded text-xl font-bold text-primary mb-4">Our Commitment</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">&#10003;</span>
+                    <p className="text-slate-600"><span className="font-bold text-primary">Vetted Professionals:</span> Every freelancer on our platform is screened for expertise and experience.</p>
+                </li>
+                 <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">&#10003;</span>
+                    <p className="text-slate-600"><span className="font-bold text-primary">Data Security:</span> We prioritize the confidentiality and security of your financial information above all else.</p>
+                </li>
+                 <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">&#10003;</span>
+                    <p className="text-slate-600"><span className="font-bold text-primary">Australian Expertise:</span> Our talent pool specializes in Australian tax law and accounting standards.</p>
+                </li>
+              </ul>
             </div>
           </motion.div>
         </motion.div>

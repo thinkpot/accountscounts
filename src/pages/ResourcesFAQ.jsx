@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 // --- Animation Variants ---
 const fadeIn = {
@@ -36,18 +37,10 @@ const faqData = [
       { q: "What kind of IT support do you have?", a: "We have a dedicated IT team providing 24/7 support to maintain our secure infrastructure. They are also available to provide detailed briefings on our security measures if required." },
     ]
   },
-  {
-    category: "Presence & Compliance",
-    questions: [
-      { q: "Do you have a presence in Australia?", a: "Yes, we have a sales branch office located in Melbourne, VIC, and we are actively serving clients in NSW, VIC, TAS, and QLD." },
-      { q: "Are you a registered and compliant business?", a: "Absolutely. We are fully registered and compliant with all necessary regulations in both India and Australia." },
-    ]
-  },
    {
     category: "Cost & Pricing",
     questions: [
       { q: "What is your pricing model?", a: "Our services are highly cost-effective, starting from just $5 per hour. We offer flexible pricing that is tailored to your specific requirements." },
-      { q: "Do you have any special offers for new clients?", a: "Yes! We offer the first 10 hours of sample jobs completely free for new customers, so you can experience the quality of our service risk-free." },
     ]
   },
 ];
@@ -71,18 +64,14 @@ const ResourcesFAQ = () => {
       
       {/* 2. Key Highlights Section */}
       <section className="py-16 bg-primary/5">
-         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={staggerContainer} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <motion.div variants={fadeIn} className="p-4">
-              <h3 className="font-unbounded text-lg font-bold text-primary mb-2">Melbourne Office</h3>
-              <p className="text-slate-600">A local sales branch for our Australian clients.</p>
-            </motion.div>
+         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={staggerContainer} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
             <motion.div variants={fadeIn} className="p-4">
               <h3 className="font-unbounded text-lg font-bold text-primary mb-2">Australian Compliance</h3>
-              <p className="text-slate-600">Fully registered and compliant with local laws.</p>
+              <p className="text-slate-600">Fully registered and compliant with local laws and regulations.</p>
             </motion.div>
              <motion.div variants={fadeIn} className="p-4">
               <h3 className="font-unbounded text-lg font-bold text-primary mb-2">Decade of Experience</h3>
-              <p className="text-slate-600">In-depth expertise in Australian Tax Law.</p>
+              <p className="text-slate-600">In-depth expertise in Australian Tax Law and accounting practices.</p>
             </motion.div>
          </motion.div>
       </section>
@@ -130,25 +119,27 @@ const ResourcesFAQ = () => {
         </div>
       </section>
       
-      {/* 4. Special Offer CTA */}
-       <section className="bg-primary text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      {/* 4. CORRECTED CTA SECTION */}
+       <section className="relative text-white py-20">
+         <div className="absolute inset-0 bg-primary opacity-90 z-10"></div>
+         <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop" alt="Team discussing work" className="absolute inset-0 w-full h-full object-cover"/>
+         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
             <motion.h2
                 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={fadeIn}
                 className="font-unbounded text-3xl md:text-4xl font-bold"
             >
-                Special Offer for New Customers
+                Ready to Build a More Efficient Business?
             </motion.h2>
             <motion.p
                 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={fadeIn}
                 className="mt-4 text-lg text-slate-300 max-w-2xl mx-auto"
             >
-               Experience the quality and efficiency of our services firsthand. Get your first <span className="text-accent font-bold">10 hours of sample jobs completely free</span>.
+               Leverage our expert talent to reduce costs, improve accuracy, and focus on what you do best—growing your business.
             </motion.p>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={fadeIn}>
-                 <motion.a href="#" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-accent text-primary font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 transform inline-block mt-8">
-                    Claim Your Free Hours
-                </motion.a>
+                 <Link to="/contact" className="bg-accent text-primary font-bold py-3 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-105 inline-block mt-8">
+                    Get Started Today
+                </Link>
             </motion.div>
         </div>
       </section>
