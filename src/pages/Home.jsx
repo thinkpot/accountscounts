@@ -324,14 +324,58 @@ const WorldwideClients = () => (
 );
 
 const TrustBar = () => (
-  <div className="bg-slate-100 py-12">
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p className="text-center text-secondary font-semibold uppercase tracking-wider mb-6">Our Talent is Proficient in Leading Financial Software</p>
-      <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 md:gap-x-16">
-        <img src="/xero.jpeg" alt="Xero Logo" className="h-8 opacity-70" />
-        <img src="/quickbook.jpeg" alt="QuickBooks Logo" className="h-8 opacity-70" />
-        <img src="/myob.png" alt="MYOB Logo" className="h-8 opacity-70" />
-        <img src="/banklink.png" alt="Banklink Logo" className="h-8 opacity-70" />
+  <div className="bg-slate-100 py-20">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p className="text-center text-secondary font-semibold uppercase tracking-wider mb-12">
+        Our Talent is Proficient in Leading Financial Software
+      </p>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-8 items-center justify-items-center">
+        <div className="flex flex-col items-center text-center">
+          <img src="/xero.jpeg" alt="Xero Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">XERO</p>
+        </div>
+        <div className="flex flex-col items-center text-center">
+          <img src="/quickbook.jpeg" alt="QuickBooks Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">QuickBooks</p>
+        </div>
+        {/* <div className="flex flex-col items-center text-center">
+          <img src="/myob.png" alt="MYOB Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">MYOB</p>
+        </div>
+        <div className="flex flex-col items-center text-center">
+          <img src="/banklink.png" alt="Banklink Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">Banklink</p>
+        </div> */}
+
+        <div className="flex flex-col items-center text-center">
+          <img src="/salesforce.webp" alt="Banklink Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">Sales Force</p>
+        </div>
+
+        <div className="flex flex-col items-center text-center">
+          <img src="/netsuite.svg" alt="Banklink Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">NetSuite</p>
+        </div>
+
+        <div className="flex flex-col items-center text-center">
+          <img src="/xpa.jpg" alt="Banklink Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">XPA</p>
+        </div>
+
+        <div className="flex flex-col items-center text-center">
+          <img src="/suitefiles.webp" alt="Banklink Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">SuiteFiles</p>
+        </div>
+
+        <div className="flex flex-col items-center text-center">
+          <img src="/fyi.png" alt="Banklink Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">FYI</p>
+        </div>
+
+        <div className="flex flex-col items-center text-center">
+          <img src="/reckon.png" alt="Banklink Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">Reckon</p>
+        </div>
       </div>
     </div>
   </div>
@@ -415,10 +459,11 @@ const Home = () => {
       <HeroSection />
       <RolesOverview />
       <HowItWorks />
+      <TrustBar />
       <WhyUsSection />
       <WorldwideClients />
       <ServicesHighlight />
-      <TrustBar />
+      
       <Testimonials />
       <FinalCTA />
     </div>

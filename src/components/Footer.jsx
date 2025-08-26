@@ -8,9 +8,11 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        {/* --- Main Footer Grid --- */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           
-          <div className="col-span-2 md:col-span-3 lg:col-span-1">
+          {/* Logo and Brand Info */}
+          <div className="col-span-2 md:col-span-4 lg:col-span-2 mb-6 lg:mb-0">
             <Link to="/" className="inline-flex items-center">
                <img src="/logo.png" alt="accountsCounts Logo" className="h-10 w-auto mr-3" />
                <span className="font-unbounded text-xl font-bold text-white">
@@ -18,11 +20,11 @@ const Footer = () => {
               </span>
             </Link>
             <p className="mt-4 text-slate-400 text-sm max-w-xs">
-              Your Financial Success is our Expertise.
+            Hiring Team For Financial Success.
             </p>
           </div>
 
-          {/* --- UPDATED SERVICES COLUMN --- */}
+          {/* --- Services Column --- */}
           <div>
             <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Services</h3>
             <ul className="mt-4 space-y-2">
@@ -37,6 +39,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* --- Company Column --- */}
           <div>
             <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Company</h3>
             <ul className="mt-4 space-y-2">
@@ -47,16 +50,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* --- Support & Connect Column (Combined) --- */}
+          <div className="col-span-2 md:col-span-1">
              <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Support</h3>
             <ul className="mt-4 space-y-2">
               <li><Link to="/contact" className="text-slate-400 hover:text-white text-sm">Contact Us</Link></li>
               <li><Link to="/resources-faq" className="text-slate-400 hover:text-white text-sm">FAQ</Link></li>
             </ul>
-          </div>
-
-           <div className="col-span-2 md:col-span-1">
-             <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Connect With Us</h3>
+             <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300 mt-6">Connect</h3>
              <div className="flex space-x-5 mt-4">
                {socialLinks.map(link => (
                   <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
@@ -69,6 +70,7 @@ const Footer = () => {
 
         </div>
 
+        {/* --- Bottom Bar --- */}
         <div className="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
            <p>&copy; {new Date().getFullYear()} accountsCounts. All rights reserved. Website by GammaOne.</p>
         </div>

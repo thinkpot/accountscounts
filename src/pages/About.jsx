@@ -39,7 +39,7 @@ const About = () => {
         className="bg-primary text-white py-20 md:py-28"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 variants={fadeIn} className="font-unbounded text-4xl md:text-6xl font-extrabold">About AccountsCounts</motion.h1>
+          <motion.h1 variants={fadeIn} className="font-unbounded text-4xl md:text-6xl font-extrabold">About accounts<span className="text-accent">Counts</span></motion.h1>
           <motion.p variants={fadeIn} className="mt-4 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
             Connecting Australia's businesses with elite, vetted accounting talent.
           </motion.p>

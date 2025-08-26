@@ -36,10 +36,10 @@ const Contact = () => {
         </div>
       </motion.section>
       
-      {/* 2. Map Section --- MOVED HERE --- */}
+      {/* 2. Map Section */}
        <section className="w-full h-[300px] md:h-[400px] bg-slate-200">
            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109315.75336829119!2d77.1001124296613!3d31.07185368560193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390578e3e35d6e67%3A0x1f7e7ff6ff9f54b7!2sShimla%2C%20Himachal%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1678886" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.600268273883!2d77.05423881508142!3d28.58175498243836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b193402706b%3A0x939bac1427598686!2sSector%2019%2C%20Dwarka%2C%20Delhi%2C%20110075%2C%20India!5e0!3m2!1sen!2sus!4v1678886" 
                 width="100%" 
                 height="100%" 
                 style={{ border:0 }} 
@@ -60,16 +60,37 @@ const Contact = () => {
         >
           {/* Left Column: Contact Details */}
           <motion.div variants={fadeIn} className="bg-white p-8 rounded-xl shadow-lg h-full">
-            <h3 className="font-unbounded text-2xl font-bold text-primary">Global Operations HQ</h3>
-            <p className="text-slate-500 mt-1 mb-6">Contact us via the details below or fill out the form.</p>
-            <div className="space-y-4 text-slate-700">
-                <div className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                    <p>Shimla, (H.P.), India</p>
+            <h3 className="font-unbounded text-2xl font-bold text-primary">Our Offices</h3>
+            <p className="text-slate-500 mt-1 mb-6">Find us at our locations in India and Australia.</p>
+            
+            <div className="space-y-6 text-slate-700">
+                {/* India Office */}
+                <div>
+                    <h4 className="font-bold text-primary mb-2">India Office</h4>
+                    <div className="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-4 text-accent flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <p>#181 Bharat Vandana, Pocket 1<br/>Sector 19 Dwarka, New Delhi 110075</p>
+                    </div>
+                     <div className="flex items-start mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-4 text-accent flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        <div>
+                            <a href="tel:+91179234841" className="hover:text-accent block">+91 179 234 841</a>
+                            <a href="tel:+919459004691" className="hover:text-accent block">+91 94590 04691</a>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-4 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                    <a href="mailto:info@accountscounts.com" className="hover:text-accent break-all">info@accountscounts.com</a>
+
+                {/* Australia Office */}
+                <div className="pt-6 border-t border-slate-200">
+                    <h4 className="font-bold text-primary mb-2">Australia Office</h4>
+                    <div className="flex items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-4 text-accent flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <p>3 Azalea Way, Rockbank<br/>Melbourne, Victoria - 3335</p>
+                    </div>
+                    <div className="flex items-start mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-4 text-accent flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        <a href="tel:+61436127841" className="hover:text-accent">+61 436 127 841</a>
+                    </div>
                 </div>
             </div>
           </motion.div>
@@ -88,7 +109,7 @@ const Contact = () => {
         </motion.div>
       </section>
 
-      {/* 4. NEW CTA SECTION */}
+      {/* 4. CTA SECTION */}
        <section className="relative text-white py-20">
          <div className="absolute inset-0 bg-primary opacity-90 z-10"></div>
          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Team discussing work" className="absolute inset-0 w-full h-full object-cover"/>
