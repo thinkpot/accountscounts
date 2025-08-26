@@ -47,28 +47,28 @@ const FinancialAnalystIcon = () => (
     </svg>
 );
 
-const VirtualCFOIcon = () => (
+// --- NEW ICONS FOR NEW SERVICES ---
+const CCTVIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <motion.path initial={{ y: -5, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }} strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        <motion.path initial={{ rotate: -10 }} animate={{ rotate: 10 }} transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }} strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
     </svg>
 );
 
-const ForensicAccountantIcon = () => (
+const DataAnalysisIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <motion.path initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5, delay: 0.5, repeat: Infinity, repeatType: "reverse" }} strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12h6" />
+        <motion.path initial={{ y: 5, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }} strokeLinecap="round" strokeLinejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18" />
     </svg>
 );
 
-const ControllerIcon = () => (
+const WebsiteDesignIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, repeat: Infinity, repeatType: "loop", repeatDelay: 2 }} strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <motion.path initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2, repeat: Infinity, repeatType: "loop", repeatDelay: 1 }} strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
     </svg>
 );
 
-const APARSpecialistIcon = () => (
+const FreelancingIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <motion.path initial={{ y: -5, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }} strokeLinecap="round" strokeLinejoin="round" d="M8 7h8m-4-4v14m-4-4h8" />
+        <motion.path initial={{ scale: 0.8 }} animate={{ scale: 1.1 }} transition={{ duration: 1, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }} strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
     </svg>
 );
 
@@ -116,7 +116,7 @@ const HeroSection = () => {
           variants={fadeIn}
           className="font-unbounded text-4xl md:text-6xl font-extrabold mb-4 leading-tight"
         >
-          Connecting Your Business With Elite Financial{' '}
+          Connecting Your Business With Elite{' '}
           <span className="text-accent">
             <Typewriter
               options={{
@@ -131,7 +131,7 @@ const HeroSection = () => {
           variants={fadeIn}
           className="max-w-3xl mx-auto text-slate-300 text-lg md:text-xl mb-8"
         >
-          We bridge the gap between global companies and elite, pre-vetted accounting professionals from India. Build your dream financial team, remotely and efficiently.
+          We bridge the gap between global companies and elite, pre-vetted professionals from India. Build your dream team, remotely and efficiently.
         </motion.p>
         <motion.div variants={fadeIn}>
           <motion.a 
@@ -174,7 +174,7 @@ const RolesOverview = () => (
         className="text-center mb-16"
       >
         <motion.h2 variants={fadeIn} className="font-unbounded text-3xl md:text-4xl font-bold text-primary">Find Your Perfect Fit</motion.h2>
-        <motion.p variants={fadeIn} className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">We provide pre-vetted, top-tier financial talent for any role your business needs.</motion.p>
+        <motion.p variants={fadeIn} className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">We provide pre-vetted, top-tier talent for any role your business needs.</motion.p>
       </motion.div>
       <motion.div 
         initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInStagger}
@@ -184,10 +184,10 @@ const RolesOverview = () => (
         <RoleCard icon={<TaxIcon />} title="Tax Specialists" description="Navigate complex international tax laws with our experienced compliance experts." />
         <RoleCard icon={<PayrollIcon />} title="Payroll Administrators" description="Ensure your team is paid accurately and on time, every time, with dedicated payroll talent." />
         <RoleCard icon={<FinancialAnalystIcon />} title="Financial Analysts" description="Hire skilled analysts to turn your financial data into actionable business insights." />
-        <RoleCard icon={<VirtualCFOIcon />} title="Virtual CFOs" description="Strategic financial guidance and high-level planning for your business's growth." />
-        <RoleCard icon={<ForensicAccountantIcon />} title="Forensic Accountants" description="Investigate financial discrepancies and fraud with our detail-oriented experts." />
-        <RoleCard icon={<ControllerIcon />} title="Controllers" description="Oversee accounting operations and ensure financial accuracy with experienced controllers." />
-        <RoleCard icon={<APARSpecialistIcon />} title="AP/AR Specialists" description="Manage invoices, payments, and cash flow with our efficient accounts payable and receivable specialists." />
+        <RoleCard icon={<CCTVIcon />} title="CCTV Monitoring" description="Reliable surveillance professionals to ensure the security and safety of your premises." />
+        <RoleCard icon={<DataAnalysisIcon />} title="Data Analysis" description="Unlock insights from your data with skilled analysts who provide actionable reports." />
+        <RoleCard icon={<WebsiteDesignIcon />} title="Website Design & Hosting" description="Build a stunning, high-performance online presence with our expert web developers." />
+        <RoleCard icon={<FreelancingIcon />} title="Freelancing" description="Access a diverse pool of flexible talent for project-based work and specialized tasks." />
       </motion.div>
     </div>
   </section>
@@ -251,10 +251,10 @@ const WhyUsSection = () => (
     >
       <div className="pr-0 md:pr-12">
         <motion.h2 variants={fadeIn} className="font-unbounded text-3xl md:text-4xl font-bold text-primary">The Smarter Way to Build Your Team</motion.h2>
-        <motion.p variants={fadeIn} className="mt-4 text-lg text-slate-600">Stop searching, start growing. We provide a strategic advantage by connecting you with world-class financial talent without the overheads of traditional hiring.</motion.p>
+        <motion.p variants={fadeIn} className="mt-4 text-lg text-slate-600">Stop searching, start growing. We provide a strategic advantage by connecting you with world-class talent without the overheads of traditional hiring.</motion.p>
         <div className="mt-8 space-y-8">
           <FeatureHighlight icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>} title="Access Global Talent">
-            Tap into a pool of elite, vetted financial professionals from India, ready to bring their expertise to your team.
+            Tap into a pool of elite, vetted professionals from India, ready to bring their expertise to your team.
           </FeatureHighlight>
           <FeatureHighlight icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>} title="Reduce Hiring Costs">
             Save time and money on recruitment, interviews, and onboarding. We handle the vetting so you can focus on interviewing the best.
@@ -388,7 +388,7 @@ const FinalCTA = () => (
         initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={fadeIn}
         className="font-unbounded text-3xl md:text-4xl font-bold text-primary"
       >
-        Ready to Build Your Global Financial Team?
+        Ready to Build Your Global Team?
       </motion.h2>
       <motion.p 
         initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }} variants={fadeIn}

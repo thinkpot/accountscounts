@@ -12,9 +12,9 @@ const Footer = () => {
           
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link to="/" className="inline-flex items-center">
-               <img src="/logo.png" alt="AccountsCounts Logo" className="h-10 w-auto mr-3" />
+               <img src="/logo.png" alt="accountsCounts Logo" className="h-10 w-auto mr-3" />
                <span className="font-unbounded text-xl font-bold text-white">
-                Account<span className="text-accent">Counts</span>
+                accounts<span className="text-accent">Counts</span>
               </span>
             </Link>
             <p className="mt-4 text-slate-400 text-sm max-w-xs">
@@ -22,15 +22,55 @@ const Footer = () => {
             </p>
           </div>
 
-          <div> <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Services</h3> <ul className="mt-4 space-y-2"> <li><Link to="/services/taxation" className="text-slate-400 hover:text-white text-sm">Taxation</Link></li> <li><Link to="/services/accounting" className="text-slate-400 hover:text-white text-sm">Accounting</Link></li> <li><Link to="/services/payroll" className="text-slate-400 hover:text-white text-sm">Payroll</Link></li> <li><Link to="/services/smsf" className="text-slate-400 hover:text-white text-sm">SMSF</Link></li> <li><Link to="/services/data-entry" className="text-slate-400 hover:text-white text-sm">Data Entry</Link></li> <li><Link to="/services/cctv-monitoring" className="text-slate-400 hover:text-white text-sm">CCTV Monitoring</Link></li> </ul> </div>
-          <div> <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Company</h3> <ul className="mt-4 space-y-2"> <li><Link to="/about" className="text-slate-400 hover:text-white text-sm">About Us</Link></li> <li><Link to="/how-it-works" className="text-slate-400 hover:text-white text-sm">How It Works</Link></li> <li><Link to="/why-outsource" className="text-slate-400 hover:text-white text-sm">Why Outsource</Link></li> <li><Link to="/technology" className="text-slate-400 hover:text-white text-sm">Technology</Link></li> </ul> </div>
-          <div> <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Support</h3> <ul className="mt-4 space-y-2"> <li><Link to="/contact" className="text-slate-400 hover:text-white text-sm">Contact Us</Link></li> <li><Link to="/resources-faq" className="text-slate-400 hover:text-white text-sm">FAQ</Link></li> </ul> </div>
-          <div className="col-span-2 md:col-span-1"> <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Connect With Us</h3> <div className="flex space-x-5 mt-4"> {socialLinks.map(link => ( <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors"> <span className="sr-only">{link.name}</span> {link.icon} </a> ))} </div> </div>
+          {/* --- UPDATED SERVICES COLUMN --- */}
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Services</h3>
+            <ul className="mt-4 space-y-2">
+              <li><Link to="/services/taxation" className="text-slate-400 hover:text-white text-sm">Taxation</Link></li>
+              <li><Link to="/services/accounting" className="text-slate-400 hover:text-white text-sm">Accounting</Link></li>
+              <li><Link to="/services/payroll" className="text-slate-400 hover:text-white text-sm">Payroll</Link></li>
+              <li><Link to="/services/smsf" className="text-slate-400 hover:text-white text-sm">SMSF</Link></li>
+              <li><Link to="/services/data-entry" className="text-slate-400 hover:text-white text-sm">Data Entry</Link></li>
+              <li><Link to="/services/cctv-monitoring" className="text-slate-400 hover:text-white text-sm">CCTV Monitoring</Link></li>
+              <li><Link to="#" className="text-slate-400 hover:text-white text-sm">Freelancing</Link></li>
+              <li><Link to="#" className="text-slate-400 hover:text-white text-sm">Website Design</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Company</h3>
+            <ul className="mt-4 space-y-2">
+              <li><Link to="/about" className="text-slate-400 hover:text-white text-sm">About Us</Link></li>
+              <li><Link to="/how-it-works" className="text-slate-400 hover:text-white text-sm">How It Works</Link></li>
+              <li><Link to="/why-outsource" className="text-slate-400 hover:text-white text-sm">Why Outsource</Link></li>
+              <li><Link to="/technology" className="text-slate-400 hover:text-white text-sm">Technology</Link></li>
+            </ul>
+          </div>
+
+          <div>
+             <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Support</h3>
+            <ul className="mt-4 space-y-2">
+              <li><Link to="/contact" className="text-slate-400 hover:text-white text-sm">Contact Us</Link></li>
+              <li><Link to="/resources-faq" className="text-slate-400 hover:text-white text-sm">FAQ</Link></li>
+            </ul>
+          </div>
+
+           <div className="col-span-2 md:col-span-1">
+             <h3 className="text-sm font-semibold tracking-wider uppercase text-slate-300">Connect With Us</h3>
+             <div className="flex space-x-5 mt-4">
+               {socialLinks.map(link => (
+                  <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                      <span className="sr-only">{link.name}</span>
+                      {link.icon}
+                  </a>
+              ))}
+            </div>
+          </div>
 
         </div>
 
         <div className="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
-           <p>&copy; {new Date().getFullYear()} AccountsCounts. All rights reserved. Website by GammaOne.</p>
+           <p>&copy; {new Date().getFullYear()} accountsCounts. All rights reserved. Website by GammaOne.</p>
         </div>
       </div>
     </footer>
