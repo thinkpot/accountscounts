@@ -26,8 +26,8 @@ const keyBenefits = [
 const whyUsData = [
   { title: "High Quality & Precise Solutions", content: "Our platform's vetting process ensures you connect only with top-tier professionals who deliver accurate, high-quality work every time." },
   { title: "Technology Driven Services", content: "We leverage a modern, secure platform to make finding, hiring, and collaborating with talent a seamless and efficient experience." },
-  { title: "Dedicated Team with Accounting Expertise", content: "Our core team comes from the accounting industry, ensuring the platform is built with a deep understanding of your specific needs." },
-  { title: "Transparent Process", content: "From clear freelancer profiles to secure milestone payments, we facilitate a transparent and trustworthy process from start to finish." },
+  { title: "Dedicated Team with Expertise", content: "Our core team comes from the industry, ensuring the platform is built with a deep understanding of your specific needs." },
+  { title: "Transparency", content: "From clear freelancer profiles to secure milestone payments, we facilitate a transparent and trustworthy process from start to finish." },
   { title: "Secure & Zero Data Leakage", content: "Your data security is our priority. We use encrypted channels and robust protocols to ensure confidentiality." },
   { title: "Customized Solutions", content: "Find professionals with the exact skills you need. Our platform allows for flexible hiring to get customized solutions for your unique business challenges." },
   { title: "24/7 Support", content: "Our platform is always on, and our support team is ready to assist you in making the most of our services." },
