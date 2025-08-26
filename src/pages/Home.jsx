@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
+import ServicesHighlight from '../components/ServicesHighlight';
 
 // --- Animation Variants for Framer Motion ---
 const fadeInStagger = {
@@ -43,6 +44,31 @@ const PayrollIcon = () => (
 const FinancialAnalystIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <motion.path initial={{ y: -5, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }} strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    </svg>
+);
+
+const VirtualCFOIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <motion.path initial={{ y: -5, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }} strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+    </svg>
+);
+
+const ForensicAccountantIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <motion.path initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5, delay: 0.5, repeat: Infinity, repeatType: "reverse" }} strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12h6" />
+    </svg>
+);
+
+const ControllerIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, repeat: Infinity, repeatType: "loop", repeatDelay: 2 }} strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+);
+
+const APARSpecialistIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <motion.path initial={{ y: -5, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }} strokeLinecap="round" strokeLinejoin="round" d="M8 7h8m-4-4v14m-4-4h8" />
     </svg>
 );
 
@@ -158,6 +184,10 @@ const RolesOverview = () => (
         <RoleCard icon={<TaxIcon />} title="Tax Specialists" description="Navigate complex international tax laws with our experienced compliance experts." />
         <RoleCard icon={<PayrollIcon />} title="Payroll Administrators" description="Ensure your team is paid accurately and on time, every time, with dedicated payroll talent." />
         <RoleCard icon={<FinancialAnalystIcon />} title="Financial Analysts" description="Hire skilled analysts to turn your financial data into actionable business insights." />
+        <RoleCard icon={<VirtualCFOIcon />} title="Virtual CFOs" description="Strategic financial guidance and high-level planning for your business's growth." />
+        <RoleCard icon={<ForensicAccountantIcon />} title="Forensic Accountants" description="Investigate financial discrepancies and fraud with our detail-oriented experts." />
+        <RoleCard icon={<ControllerIcon />} title="Controllers" description="Oversee accounting operations and ensure financial accuracy with experienced controllers." />
+        <RoleCard icon={<APARSpecialistIcon />} title="AP/AR Specialists" description="Manage invoices, payments, and cash flow with our efficient accounts payable and receivable specialists." />
       </motion.div>
     </div>
   </section>
@@ -387,6 +417,7 @@ const Home = () => {
       <HowItWorks />
       <WhyUsSection />
       <WorldwideClients />
+      <ServicesHighlight />
       <TrustBar />
       <Testimonials />
       <FinalCTA />

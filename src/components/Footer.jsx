@@ -8,14 +8,16 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           
-          <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            {/* --- CORRECTED SPELLING --- */}
-            <Link to="/" className="font-unbounded text-2xl font-bold text-white">
-              Account<span className="text-accent">Counts</span>
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
+            <Link to="/" className="inline-flex items-center">
+               <img src="/logo.png" alt="AccountsCounts Logo" className="h-10 w-auto mr-3" />
+               <span className="font-unbounded text-xl font-bold text-white">
+                Account<span className="text-accent">Counts</span>
+              </span>
             </Link>
-            <p className="mt-4 text-slate-400 text-sm">
+            <p className="mt-4 text-slate-400 text-sm max-w-xs">
               Your Financial Success is our Expertise.
             </p>
           </div>
@@ -28,7 +30,6 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-slate-700 pt-8 text-center text-sm text-slate-500">
-           {/* --- CORRECTED SPELLING --- */}
            <p>&copy; {new Date().getFullYear()} AccountsCounts. All rights reserved. Website by GammaOne.</p>
         </div>
       </div>

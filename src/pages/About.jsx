@@ -26,42 +26,11 @@ const ValueCard = ({ icon, title, children }) => (
   </motion.div>
 );
 
-// --- Self-Contained Mission & Goal Component with Vertical Layout ---
-const MissionGoalSection = () => (
-    <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-          >
-            <motion.h2 variants={fadeIn} className="font-unbounded text-3xl md:text-4xl font-bold text-primary mb-12">Our Mission & Goal</motion.h2>
-            {/* --- THIS IS THE CORRECTED LAYOUT --- */}
-            <div className="space-y-12 text-left">
-              <motion.div variants={fadeIn}>
-                <h3 className="font-unbounded text-2xl font-semibold text-primary mb-3">Our Mission</h3>
-                <p className="text-slate-600">To provide the highest quality accounting, audit, tax, and consultancy services. We continually strive to provide exceptional, industry-specific service by connecting businesses with the perfect professional for the job.</p>
-              </motion.div>
-              <motion.div variants={fadeIn}>
-                <h3 className="font-unbounded text-2xl font-semibold text-primary mb-3">Our Goal</h3>
-                <p className="text-slate-600">To meet our professional responsibilities in an ethical and fair manner, providing a platform of the highest quality to our clients that consistently exceeds their expectations.</p>
-              </motion.div>
-            </div>
-            <motion.div variants={fadeIn} className="mt-12 bg-slate-100 border-l-4 border-accent p-6 rounded-r-lg max-w-3xl mx-auto text-left">
-              <p className="text-slate-700 italic">"That's why we are approaching CPAs, CAs & other Accounting Professionals rather than directly striking on clients."</p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-);
-
-
 // --- Main About Component ---
 const About = () => {
   return (
     <div className="bg-slate-50">
-      {/* 1. Hero Section */}
+      {/* --- SECTION 1: Hero --- */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -76,7 +45,7 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* 2. Our Story Section */}
+      {/* --- SECTION 2: Our Story --- */}
       <section className="py-20 md:py-28">
         <motion.div
           initial="hidden"
@@ -95,15 +64,39 @@ const About = () => {
             </p>
           </motion.div>
           <motion.div variants={fadeIn} className="rounded-xl overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e-53415bb0?q=80&w=2070&auto=format&fit=crop" alt="A modern business meeting" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="A modern business meeting" className="w-full h-full object-cover" />
           </motion.div>
         </motion.div>
       </section>
 
-      {/* 3. Mission & Goal Section is now a separate component */}
-      <MissionGoalSection />
+      {/* --- SECTION 3: Mission & Goal --- */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+          >
+            <motion.h2 variants={fadeIn} className="font-unbounded text-3xl md:text-4xl font-bold text-primary mb-12">Our Mission & Goal</motion.h2>
+            <div className="space-y-12 text-left">
+              <motion.div variants={fadeIn}>
+                <h3 className="font-unbounded text-2xl font-semibold text-primary mb-3">Our Mission</h3>
+                <p className="text-slate-600">To provide the highest quality accounting, audit, tax, and consultancy services. We continually strive to provide exceptional, industry-specific service by connecting businesses with the perfect professional for the job.</p>
+              </motion.div>
+              <motion.div variants={fadeIn}>
+                <h3 className="font-unbounded text-2xl font-semibold text-primary mb-3">Our Goal</h3>
+                <p className="text-slate-600">To meet our professional responsibilities in an ethical and fair manner, providing a platform of the highest quality to our clients that consistently exceeds their expectations.</p>
+              </motion.div>
+            </div>
+            <motion.div variants={fadeIn} className="mt-12 bg-slate-100 border-l-4 border-accent p-6 rounded-r-lg max-w-3xl mx-auto text-left">
+              <p className="text-slate-700 italic">"That's why we are approaching CPAs, CAs & other Accounting Professionals rather than directly striking on clients."</p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
-      {/* 4. Our Core Values Section */}
+      {/* --- SECTION 4: Our Core Values --- */}
       <section className="py-20 md:py-28 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
