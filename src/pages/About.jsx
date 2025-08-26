@@ -26,6 +26,37 @@ const ValueCard = ({ icon, title, children }) => (
   </motion.div>
 );
 
+// --- Self-Contained Mission & Goal Component with Vertical Layout ---
+const MissionGoalSection = () => (
+    <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+          >
+            <motion.h2 variants={fadeIn} className="font-unbounded text-3xl md:text-4xl font-bold text-primary mb-12">Our Mission & Goal</motion.h2>
+            {/* --- THIS IS THE CORRECTED LAYOUT --- */}
+            <div className="space-y-12 text-left">
+              <motion.div variants={fadeIn}>
+                <h3 className="font-unbounded text-2xl font-semibold text-primary mb-3">Our Mission</h3>
+                <p className="text-slate-600">To provide the highest quality accounting, audit, tax, and consultancy services. We continually strive to provide exceptional, industry-specific service by connecting businesses with the perfect professional for the job.</p>
+              </motion.div>
+              <motion.div variants={fadeIn}>
+                <h3 className="font-unbounded text-2xl font-semibold text-primary mb-3">Our Goal</h3>
+                <p className="text-slate-600">To meet our professional responsibilities in an ethical and fair manner, providing a platform of the highest quality to our clients that consistently exceeds their expectations.</p>
+              </motion.div>
+            </div>
+            <motion.div variants={fadeIn} className="mt-12 bg-slate-100 border-l-4 border-accent p-6 rounded-r-lg max-w-3xl mx-auto text-left">
+              <p className="text-slate-700 italic">"That's why we are approaching CPAs, CAs & other Accounting Professionals rather than directly striking on clients."</p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+);
+
+
 // --- Main About Component ---
 const About = () => {
   return (
@@ -38,7 +69,6 @@ const About = () => {
         className="bg-primary text-white py-20 md:py-28"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* --- THIS LINE IS CORRECTED --- */}
           <motion.h1 variants={fadeIn} className="font-unbounded text-4xl md:text-6xl font-extrabold">About AccountsCounts</motion.h1>
           <motion.p variants={fadeIn} className="mt-4 text-lg md:text-xl text-slate-300 max-w-3xl mx-auto">
             Connecting Australia's businesses with elite, vetted accounting talent.
@@ -65,37 +95,13 @@ const About = () => {
             </p>
           </motion.div>
           <motion.div variants={fadeIn} className="rounded-xl overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="A modern business meeting" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e-53415bb0?q=80&w=2070&auto=format&fit=crop" alt="A modern business meeting" className="w-full h-full object-cover" />
           </motion.div>
         </motion.div>
       </section>
 
-      {/* 3. Mission & Goal Section */}
-      <section className="py-20 md:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-          >
-            <motion.h2 variants={fadeIn} className="font-unbounded text-3xl font-bold text-primary mb-12">Our Mission & Goal</motion.h2>
-            <div className="grid md:grid-cols-2 gap-12 text-left">
-              <motion.div variants={fadeIn}>
-                <h3 className="font-unbounded text-2xl font-semibold text-primary mb-3">Our Mission</h3>
-                <p className="text-slate-600">To provide the highest quality accounting, audit, tax, and consultancy services. We continually strive to provide exceptional, industry-specific service by connecting businesses with the perfect professional for the job.</p>
-              </motion.div>
-              <motion.div variants={fadeIn}>
-                <h3 className="font-unbounded text-2xl font-semibold text-primary mb-3">Our Goal</h3>
-                <p className="text-slate-600">To meet our professional responsibilities in an ethical and fair manner, providing a platform of the highest quality to our clients that consistently exceeds their expectations.</p>
-              </motion.div>
-            </div>
-            <motion.div variants={fadeIn} className="mt-12 bg-slate-100 border-l-4 border-accent p-6 rounded-r-lg max-w-3xl mx-auto text-left">
-              <p className="text-slate-700 italic">"That's why we are approaching CPAs, CAs & other Accounting Professionals rather than directly striking on clients."</p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      {/* 3. Mission & Goal Section is now a separate component */}
+      <MissionGoalSection />
 
       {/* 4. Our Core Values Section */}
       <section className="py-20 md:py-28 bg-slate-50">
@@ -116,24 +122,12 @@ const About = () => {
             variants={staggerContainer}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} title="High Quality & Precision">
-              We ensure every professional on our platform is vetted for excellence, providing precise and reliable solutions.
-            </ValueCard>
-            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>} title="Technology Driven">
-              Leveraging modern technology to make hiring and collaboration seamless, efficient, and effective.
-            </ValueCard>
-            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-1.781-4.121" /></svg>} title="Dedicated Expertise">
-              Our platform is built by a dedicated team with deep accounting expertise, ensuring quality and relevance.
-            </ValueCard>
-             <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>} title="Transparent Process">
-              Clarity is key. From pricing to project milestones, we facilitate a transparent process for everyone.
-            </ValueCard>
-             <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>} title="Secure & Zero Data Leakage">
-              We prioritize data security with robust protocols to ensure confidentiality and peace of mind.
-            </ValueCard>
-             <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100 4m0-4a2 2 0 110 4m0-4v2m0 4v2m8-12a2 2 0 100 4m0-4a2 2 0 110 4m0 4v2m0-4v-2" /></svg>} title="Customized Solutions">
-              Our platform connects you with professionals who can provide tailored solutions that fit your specific business needs.
-            </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} title="High Quality & Precision"> We ensure every professional on our platform is vetted for excellence, providing precise and reliable solutions. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>} title="Technology Driven"> Leveraging modern technology to make hiring and collaboration seamless, efficient, and effective. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-1.781-4.121" /></svg>} title="Dedicated Expertise"> Our platform is built by a dedicated team with deep accounting expertise, ensuring quality and relevance. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>} title="Transparent Process"> Clarity is key. From pricing to project milestones, we facilitate a transparent process for everyone. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>} title="Secure & Zero Data Leakage"> We prioritize data security with robust protocols to ensure confidentiality and peace of mind. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100 4m0-4a2 2 0 110 4m0-4v2m0 4v2m8-12a2 2 0 100 4m0-4a2 2 0 110 4m0 4v2m0-4v-2" /></svg>} title="Customized Solutions"> Our platform connects you with professionals who can provide tailored solutions that fit your specific business needs. </ValueCard>
           </motion.div>
         </div>
       </section>
