@@ -328,10 +328,10 @@ const TrustBar = () => (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <p className="text-center text-secondary font-semibold uppercase tracking-wider mb-6">Our Talent is Proficient in Leading Financial Software</p>
       <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 md:gap-x-16">
-        <img src="https://placehold.co/120x40/ffffff/8c92ac?text=XERO" alt="Xero Logo" className="h-8 opacity-70" />
-        <img src="https://placehold.co/120x40/ffffff/8c92ac?text=QuickBooks" alt="QuickBooks Logo" className="h-8 opacity-70" />
-        <img src="https://placehold.co/120x40/ffffff/8c92ac?text=MYOB" alt="MYOB Logo" className="h-8 opacity-70" />
-        <img src="https://placehold.co/120x40/ffffff/8c92ac?text=Banklink" alt="Banklink Logo" className="h-8 opacity-70" />
+        <img src="/xero.jpeg" alt="Xero Logo" className="h-8 opacity-70" />
+        <img src="/quickbook.jpeg" alt="QuickBooks Logo" className="h-8 opacity-70" />
+        <img src="/myob.png" alt="MYOB Logo" className="h-8 opacity-70" />
+        <img src="/banklink.png" alt="Banklink Logo" className="h-8 opacity-70" />
       </div>
     </div>
   </div>
