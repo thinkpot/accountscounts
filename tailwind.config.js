@@ -9,7 +9,7 @@ export default {
       colors: {
         'primary': '#001f3f',    // Deep Navy Blue
         'secondary': '#8c92ac', // Cool Slate Gray
-        'accent': '#d4af37',     // Gold
+        'accent': '#5DE2E7',     // Gold
       },
       fontFamily: {
         'unbounded': ['Unbounded', 'sans-serif'],
@@ -19,3 +19,5 @@ export default {
   },
   plugins: [],
 }
+
+/* working */

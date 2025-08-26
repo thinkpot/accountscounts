@@ -232,7 +232,7 @@ const WhyUsSection = () => (
         </div>
       </div>
       <motion.div variants={fadeIn} className="rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-auto">
-         <img src="https://images.unsplash.com/photo-1600880292210-f58919a5173e?q=80&w=2070&auto=format&fit=crop" alt="Professional team collaborating on a project" className="w-full h-full object-cover" />
+         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Professional team collaborating on a project" className="w-full h-full object-cover" />
       </motion.div>
     </motion.div>
   </section>

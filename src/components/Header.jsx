@@ -17,7 +17,7 @@ const Header = () => {
   ];
 
   const navLinkStyle = ({ isActive }) => ({
-    color: isActive ? '#d4af37' : '#d1d5db',
+    color: isActive ? '#d4af37' : '#d1d5db', // text-accent for active, text-gray-300 for inactive
   });
   
   const mobileNavLinkStyle = ({ isActive }) => ({
@@ -41,8 +41,12 @@ const Header = () => {
       <header className="bg-primary sticky top-0 z-50 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <Link to="/" className="font-unbounded text-2xl font-bold text-white">
-              Accounts<span className="text-accent">Counts</span>
+            {/* --- Logo and Brand Name --- */}
+            <Link to="/" className="flex items-center">
+              <img src="/logo.png" alt="AccountsCounts Logo" className="h-12 w-auto mr-3" />
+              <span className="font-unbounded text-2xl font-bold text-white">
+                Accounts<span className="text-accent">Counts</span>
+              </span>
             </Link>
 
             {/* --- Desktop Navigation (Hidden on Mobile) --- */}
