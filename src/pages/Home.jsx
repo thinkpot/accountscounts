@@ -403,7 +403,7 @@ const Testimonials = () => (
       >
         <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl shadow-lg text-white relative overflow-hidden group">
           <div className="absolute top-0 left-[-150%] w-[100px] h-[200%] bg-white/20 -skew-x-12 transform transition-transform duration-700 group-hover:translate-x-[500px]"></div>
-          <p className="text-slate-300 italic">"AccountsCounts connected us with a fantastic bookkeeper who integrated with our team in Canada flawlessly. The quality of talent is exceptional."</p>
+          <p className="text-slate-300 italic">"accountsCounts connected us with a fantastic bookkeeper who integrated with our team in Canada flawlessly. The quality of talent is exceptional."</p>
           <div className="mt-4 pt-4 border-t border-white/20">
             <p className="font-bold">Jane Doe</p>
             <p className="text-sm text-accent">CEO, Tech Solutions Inc. (Canada)</p>
@@ -419,7 +419,7 @@ const Testimonials = () => (
         </motion.div>
         <motion.div variants={fadeIn} className="bg-white/10 backdrop-blur-lg border border-white/20 p-8 rounded-2xl shadow-lg text-white relative overflow-hidden group">
           <div className="absolute top-0 left-[-150%] w-[100px] h-[200%] bg-white/20 -skew-x-12 transform transition-transform duration-700 group-hover:translate-x-[500px]"></div>
-          <p className="text-slate-300 italic">"We needed a financial analyst with very specific skills. AccountsCounts delivered a perfect candidate who has become an invaluable part of our US team."</p>
+          <p className="text-slate-300 italic">"We needed a financial analyst with very specific skills. accountsCounts delivered a perfect candidate who has become an invaluable part of our US team."</p>
           <div className="mt-4 pt-4 border-t border-white/20">
             <p className="font-bold">Emily White</p>
             <p className="text-sm text-accent">Director, Global Exports (USA)</p>

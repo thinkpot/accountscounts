@@ -41,18 +41,18 @@ const servicesDropdownLinks = [
   { path: '/services/data-entry', name: 'Data Analysis' },
   { path: '/services/cctv-monitoring', name: 'CCTV Monitoring' },
   { path: '/services/freelancing', name: 'Freelancing' },
-  { path: '/services/website-design', name: 'Web Design' },
+  { path: '/services/website-design', name: 'Web Design & Hosting' },
 ];
 
 const allNavLinks = [
   { path: '/', name: 'Home' },
-  { path: '/about', name: 'About' },
+  { path: '/about', name: 'About Us' },
   { path: '/services', name: 'Services' },
   { path: '/how-it-works', name: 'Process' },
   { path: '/why-outsource', name: 'Why Us' },
   // { path: '/technology', name: 'Tech' },
   { path: '/resources-faq', name: 'Resources' },
-  { path: '/contact', name: 'Contact' },
+  { path: '/contact', name: 'Contact Us' },
 ];
 
 const Header = () => {

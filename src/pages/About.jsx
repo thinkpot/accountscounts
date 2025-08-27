@@ -58,7 +58,7 @@ const About = () => {
           <motion.div variants={fadeIn}>
             <h2 className="font-unbounded text-3xl font-bold text-primary mb-4">Our Story</h2>
             <p className="text-slate-600 mb-4 leading-relaxed">
-              AccountsCounts was born from a simple observation: the way businesses and accounting professionals connect is changing. Australian businesses needed a flexible way to access top-tier financial expertise without the overhead of traditional hiring. Simultaneously, expert accountants and bookkeepers were seeking more autonomy and direct access to meaningful projects.
+              accountsCounts was born from a simple observation: the way businesses and accounting professionals connect is changing. Australian businesses needed a flexible way to access top-tier financial expertise without the overhead of traditional hiring. Simultaneously, expert accountants and bookkeepers were seeking more autonomy and direct access to meaningful projects.
             </p>
             <p className="text-slate-600 leading-relaxed">
               We created this platform to bridge that gap. Founded on a deep understanding of the accounting industry, we built a trusted digital marketplace that empowers both sides—providing businesses with the talent they need to thrive, and professionals with the freedom to build their own success.
