@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import ServicesHighlight from '../components/ServicesHighlight';
+import { Link } from 'react-router-dom'; // Import Link
 
 // --- Animation Variants for Framer Motion ---
 const fadeInStagger = {
@@ -147,24 +148,28 @@ const HeroSection = () => {
   );
 };
 
-const RoleCard = ({ icon, title, description }) => (
+const RoleCard = ({ icon, title, description, path }) => ( // Added path prop
   <motion.div 
     variants={fadeIn}
     whileHover={{ y: -8, scale: 1.03 }}
-    className="bg-white/50 backdrop-blur-xl border border-white/30 p-8 rounded-2xl shadow-lg cursor-pointer relative overflow-hidden group"
+    className="relative overflow-hidden group h-full"
   >
-    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-    <div className="absolute top-0 left-[-150%] w-[100px] h-[200%] bg-white/30 -skew-x-12 transform transition-transform duration-700 group-hover:translate-x-[400px]"></div>
-    <div className="relative z-10">
-      <div className="text-accent mb-4">{icon}</div>
-      <h3 className="font-unbounded text-2xl font-bold text-primary mb-3">{title}</h3>
-      <p className="text-slate-700">{description}</p>
-      <div className="text-accent font-bold mt-4 inline-block">
-        Learn More <span className="transition-transform group-hover:translate-x-1 inline-block">&rarr;</span>
-      </div>
-    </div>
+    <Link to={path} className="flex flex-col h-full">
+        <div className="bg-white/50 backdrop-blur-xl border border-white/30 p-8 rounded-2xl shadow-lg cursor-pointer flex-grow flex flex-col">
+            <div className="absolute top-0 left-[-150%] w-[100px] h-[200%] bg-white/30 -skew-x-12 transform transition-transform duration-700 group-hover:translate-x-[400px]"></div>
+            <div className="relative z-10 flex flex-col flex-grow">
+                <div className="text-accent mb-4">{icon}</div>
+                <h3 className="font-unbounded text-xl font-bold text-primary mb-3">{title}</h3>
+                <p className="text-slate-700 text-sm flex-grow">{description}</p>
+                <div className="text-accent font-bold mt-4 inline-block self-start">
+                    Learn More <span className="transition-transform group-hover:translate-x-1 inline-block">&rarr;</span>
+                </div>
+            </div>
+        </div>
+    </Link>
   </motion.div>
 );
+
 
 const RolesOverview = () => (
   <section className="py-20 md:py-28 bg-gradient-to-br from-slate-50 to-gray-200">
@@ -178,16 +183,16 @@ const RolesOverview = () => (
       </motion.div>
       <motion.div 
         initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeInStagger}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        className="grid grid-cols-2 md:grid-cols-4 gap-8"
       >
-        <RoleCard icon={<BookkeeperIcon />} title="Expert Bookkeepers" description="Meticulous professionals to keep your daily finances accurate and organized." />
-        <RoleCard icon={<TaxIcon />} title="Tax Specialists" description="Navigate complex international tax laws with our experienced compliance experts." />
-        <RoleCard icon={<PayrollIcon />} title="Payroll Administrators" description="Ensure your team is paid accurately and on time, every time, with dedicated payroll talent." />
-        <RoleCard icon={<FinancialAnalystIcon />} title="Financial Analysts" description="Hire skilled analysts to turn your financial data into actionable business insights." />
-        <RoleCard icon={<CCTVIcon />} title="CCTV Monitoring" description="Reliable surveillance professionals to ensure the security and safety of your premises." />
-        <RoleCard icon={<DataAnalysisIcon />} title="Data Analysis" description="Unlock insights from your data with skilled analysts who provide actionable reports." />
-        <RoleCard icon={<WebsiteDesignIcon />} title="Website Design & Hosting" description="Build a stunning, high-performance online presence with our expert web developers." />
-        <RoleCard icon={<FreelancingIcon />} title="Freelancing" description="Access a diverse pool of flexible talent for project-based work and specialized tasks." />
+        <RoleCard path="/services/accounting" icon={<BookkeeperIcon />} title="Expert Bookkeepers" description="Meticulous professionals to keep your daily finances accurate and organized." />
+        <RoleCard path="/services/taxation" icon={<TaxIcon />} title="Tax Specialists" description="Navigate complex international tax laws with our experienced compliance experts." />
+        <RoleCard path="/services/payroll" icon={<PayrollIcon />} title="Payroll Administrators" description="Ensure your team is paid accurately and on time, every time, with dedicated payroll talent." />
+        <RoleCard path="/services/data-entry" icon={<FinancialAnalystIcon />} title="Financial Analysts" description="Hire skilled analysts to turn your financial data into actionable business insights." />
+        <RoleCard path="/services/cctv-monitoring" icon={<CCTVIcon />} title="CCTV Monitoring" description="Reliable surveillance professionals to ensure the security and safety of your premises." />
+        <RoleCard path="/services/data-entry" icon={<DataAnalysisIcon />} title="Data Analysis" description="Unlock insights from your data with skilled analysts who provide actionable reports." />
+        <RoleCard path="/services/website-design" icon={<WebsiteDesignIcon />} title="Website Design & Hosting" description="Build a stunning, high-performance online presence with our expert web developers." />
+        <RoleCard path="/services/freelancing" icon={<FreelancingIcon />} title="Freelancing" description="Access a diverse pool of flexible talent for project-based work and specialized tasks." />
       </motion.div>
     </div>
   </section>
