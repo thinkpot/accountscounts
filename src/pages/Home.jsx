@@ -373,8 +373,8 @@ const TrustBar = () => (
         </div>
 
         <div className="flex flex-col items-center text-center">
-          <img src="/fyi.png" alt="Banklink Logo" className="h-16 mb-3" />
-          <p className="font-semibold text-slate-600">FYI</p>
+          <img src="/myob.png" alt="MYOB Logo" className="h-16 mb-3" />
+          <p className="font-semibold text-slate-600">MYOB</p>
         </div>
 
         <div className="flex flex-col items-center text-center">
