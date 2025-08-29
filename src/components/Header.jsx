@@ -63,18 +63,11 @@ const Header = () => {
   const location = useLocation();
   const isServicesActive = location.pathname.startsWith('/services');
 
-  const navLinkStyle = ({ isActive }) => ({
-    color: isActive ? '#d4af37' : '#d1d5db',
-  });
+  // Common class strings for NavLinks to keep code DRY
+  const commonDesktopLinkClasses = "text-sm font-semibold transition-colors hover:text-accent";
+  const commonMobileLinkClasses = "text-lg font-semibold px-4 py-3 rounded-md transition-colors";
+  const commonMobileSubLinkClasses = "block text-base font-semibold px-4 py-2 rounded-md transition-colors";
 
-  const servicesLinkStyle = {
-    color: isServicesActive ? '#d4af37' : '#d1d5db',
-  };
-
-  const mobileNavLinkStyle = (isActive) => ({
-    backgroundColor: isActive ? 'rgba(212, 175, 55, 0.1)' : 'transparent',
-    color: isActive ? '#d4af37' : '#FFFFFF',
-  });
 
   return (
     <>
@@ -103,8 +96,7 @@ const Header = () => {
                       >
                         <NavLink
                           to="/services"
-                          style={servicesLinkStyle}
-                          className="text-sm font-semibold hover:text-accent flex items-center gap-1 transition-colors"
+                          className={`${commonDesktopLinkClasses} flex items-center gap-1 ${isServicesActive ? 'text-accent' : 'text-gray-300'}`}
                         >
                           Services
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -138,7 +130,13 @@ const Header = () => {
                     );
                   }
                   return (
-                    <NavLink key={link.path} to={link.path} style={navLinkStyle} className="text-sm font-semibold hover:text-accent transition-colors">{link.name}</NavLink>
+                    <NavLink
+                      key={link.path}
+                      to={link.path}
+                      className={({ isActive }) => `${commonDesktopLinkClasses} ${isActive ? 'text-accent' : 'text-gray-300'}`}
+                    >
+                      {link.name}
+                    </NavLink>
                   );
                 })}
               </nav>
@@ -196,13 +194,11 @@ const Header = () => {
             <nav className="flex flex-col space-y-2">
               {allNavLinks.map(link => {
                 if (link.name === 'Services') {
-                  const isActive = location.pathname.startsWith('/services');
                   return (
                     <div key={link.path}>
                       <button
                         onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                        style={mobileNavLinkStyle(isActive)}
-                        className="w-full flex justify-between items-center text-lg font-semibold px-4 py-3 rounded-md transition-colors"
+                        className={`w-full flex justify-between items-center ${commonMobileLinkClasses} ${isServicesActive ? 'bg-accent/10 text-accent' : 'text-white'}`}
                       >
                         <span>Services</span>
                         <motion.div animate={{ rotate: isMobileServicesOpen ? 180 : 0 }}>
@@ -223,9 +219,8 @@ const Header = () => {
                               <NavLink
                                 key={serviceLink.path}
                                 to={serviceLink.path}
-                                style={({ isActive }) => mobileNavLinkStyle(isActive)}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="block text-base font-semibold px-4 py-2 rounded-md transition-colors"
+                                className={({ isActive }) => `${commonMobileSubLinkClasses} ${isActive ? 'bg-accent/10 text-accent' : 'text-white'}`}
                               >
                                 {serviceLink.name}
                               </NavLink>
@@ -240,9 +235,8 @@ const Header = () => {
                   <NavLink
                     key={link.path}
                     to={link.path}
-                    style={({ isActive }) => mobileNavLinkStyle(isActive)}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-lg font-semibold px-4 py-3 rounded-md transition-colors"
+                    className={({ isActive }) => `${commonMobileLinkClasses} ${isActive ? 'bg-accent/10 text-accent' : 'text-white'}`}
                   >
                     {link.name}
                   </NavLink>
@@ -270,7 +264,7 @@ const Header = () => {
               <div className="flex items-center space-x-3 mt-6">
                 <img src="https://flagcdn.com/in.svg" width="24" alt="India Flag" title="India"/>
                 <img src="https://flagcdn.com/au.svg" width="24" alt="Australia Flag" title="Australia"/>
-                <img src="https://flagcdn.com/us.svg" width="24" alt="USA Flag" title="USA"/>
+                <img src="https://www.countryflags.io/us/shiny/64.png" width="24" alt="USA Flag" title="USA"/>
                 <img src="https://flagcdn.com/ca.svg" width="24" alt="Canada Flag" title="Canada"/>
               </div>
             </div>

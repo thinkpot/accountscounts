@@ -16,6 +16,25 @@ const fadeInStagger = {
   }
 };
 
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const ValueCard = ({ icon, title, children }) => (
+  <motion.div variants={fadeIn} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+    <div className="text-accent mb-4">{icon}</div>
+    <h3 className="font-unbounded text-lg font-bold text-primary mb-2">{title}</h3>
+    <p className="text-slate-600 text-sm">{children}</p>
+  </motion.div>
+);
+
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -456,6 +475,36 @@ const FinalCTA = () => (
   </section>
 );
 
+const CoreValues = () => (
+  <section className="py-20 md:py-28 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 variants={fadeIn} className="font-unbounded text-3xl font-bold text-primary">Our Core Values</motion.h2>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>} title="High Quality & Precision"> We ensure every professional on our platform is vetted for excellence. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>} title="Technology Driven"> Leveraging modern technology to make hiring and collaboration seamless. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-1a6 6 0 00-1.781-4.121" /></svg>} title="Dedicated Expertise"> Our platform is built by a team with deep accounting expertise. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V7a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>} title="Transparent Process"> From pricing to milestones, we facilitate a transparent process. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>} title="Secure & Zero Data Leakage"> We prioritize data security with robust protocols to ensure confidentiality. </ValueCard>
+            <ValueCard icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100 4m0-4a2 2 0 110 4m0-4v2m0 4v2m8-12a2 2 0 100 4m0-4a2 2 0 110 4m0 4v2m0-4v-2" /></svg>} title="Customized Solutions"> Connect with professionals who can provide tailored solutions. </ValueCard>
+          </motion.div>
+        </div>
+      </section>
+)
+
 
 // --- Main Home Component ---
 const Home = () => {
@@ -465,8 +514,10 @@ const Home = () => {
       <RolesOverview />
       <HowItWorks />
       <TrustBar />
+      <CoreValues />
       <WhyUsSection />
       <WorldwideClients />
+
       <ServicesHighlight />
       
       <Testimonials />
